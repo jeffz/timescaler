@@ -367,9 +367,9 @@ GLOBAL int clock_gettime(clockid_t clk_id, struct timespec *tp)
   if(unlikely(!IS_HOOKED(clock_gettime)))
     return ts_config.funcs.clock_gettime(clk_id, tp);
 
-  if(clk_id != CLOCK_REALTIME && clk_id != CLOCK_MONOTONIC)
+  if(clk_id != CLOCK_REALTIME && clk_id != CLOCK_MONOTONIC && clk_id != CLOCK_MONOTONIC_RAW)
   {
-    timescaler_log(ERROR, "Wrong clock given to clock_gettime");
+    timescaler_log(ERROR, "Wrong clock given to clock_gettime %d", clk_id);
     return EINVAL;
   }
 
