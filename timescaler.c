@@ -512,7 +512,7 @@ GLOBAL int getitimer(int which, struct itimerval *curr_value)
 /**
  * The gettimeofday function
  */
-GLOBAL int gettimeofday(struct timeval *tv, struct timezone *tz)
+GLOBAL int gettimeofday(struct timeval *tv, void *__restrict tz)
 {
   PROLOGUE();
 
