@@ -162,7 +162,7 @@ static const char *psz_log_level[] =
  * @param psz_fmt: the message to print
  * @return nothing
  */
-LOCAL inline void timescaler_log(log_level level, const char *psz_fmt, ...)
+static inline void timescaler_log(log_level level, const char *psz_fmt, ...)
 {
   if(unlikely(level <= ts_config.verbosity))
   {
